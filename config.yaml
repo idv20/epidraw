@@ -1,0 +1,58 @@
+# genome: hg19 / hg38
+genome: hg19
+
+# paired-end sequencing: True / False
+paired-end: True
+
+# if chip, does it have input: True / False
+input: True
+
+# number of bases for extending window around peak summit
+slop: 250
+
+# exp_dir: full/path/to/experiment/starting/directory
+exp_dir: /home/my_dir
+
+# samples: full/path/to/csv/file/with/samples
+samples: /home/my_dir/samples.csv
+
+# bam_dir: name of BAM directory
+bam_dir_name: BAM
+
+# bed_dir: name of BED directory
+bed_dir_name: BED
+
+# frip filter and threshold
+frip_alpha: 0.1
+
+# BED filtering parameters
+reset: False #change to True if you want to recalculate stats
+pos_neg_ratio_threshold: 4
+score_threshold: 1 # MACS2 score
+unique_reads_normalized_threshold: 0.35 #35 unique reads per 500 bp per 100M reads
+unique_ratio_threshold: 10
+total_reads_normalized_threshold: 0.7 #70 reads per 500 bp per 100M reads
+mapq_threshold: 10
+nm_threshold: 5
+
+total_reads_threshold: 20
+
+# distance from tss (bp)
+tss_dist: 5000
+
+# UMAP parameters
+metric: euclidean
+n_neighbors: 20
+repulsion_strength: 1
+min_dist: 0.00001
+n_epochs: 1000
+spread: 1
+
+# Leiden clustering resolution
+res: 0.0001
+
+# Enrichment parameters
+top_te: 20
+enrich_thresh_te: 20
+top_kzfp: 20
+enrich_thresh_kzfp: 20
