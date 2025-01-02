@@ -11,9 +11,10 @@ The EpiDRAW input consists in genomic alignment files in BAM format.
 
 (D) Each cluster of peaks can then be used for downstream enrichment analyses of features of interest.
 
+![EpiDRAW](https://github.com/idv20/epidraw/blob/main/images/epidraw.jpg)
 
 ## Installing the Linux environment
-You can install the environment on a Linux machine from the epidraw.yml file. To install the environment using Conda use:
+You can install the environment on a Linux machine from the [epidraw.yml](https://github.com/idv20/epidraw/blob/main/envs/epidraw.yml) file. To install the environment using Conda use:
 
 ```
 conda create env --name <env> --file epidraw.yml
@@ -33,7 +34,7 @@ The CSV file contains the names of samples to be analysed. Names need to be prov
 If the samples do not have inputs, you can leave the __input__ column header in the CSV file without filling any cells below it.
 
 ### 2. Config file
-The config file specifies the parameters required for the EpiDRAW analysis.
+The [config file](https://github.com/idv20/epidraw/blob/main/config.yaml) specifies the parameters required for the EpiDRAW analysis.
 
 ### 3. Snakefile
 The Snakefile specifies the order in which the Python scripts should be run as part of the Snakemake EpiDRAW workflow.
@@ -55,4 +56,4 @@ snakemake --cores <number of cores>
 ```
 
 ## More information
-You can find more information on how to run a Snakemake workflow by following [this link](https://snakemake.github.io/).# epidraw
+You can find more information on how to run a Snakemake workflow by following [this link](https://snakemake.github.io/).
