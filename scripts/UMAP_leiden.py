@@ -175,7 +175,6 @@ if __name__ == '__main__':
     df_metrics, df_merged = get_embed(matrix,
                                     df_scores,
                                     param_dict,
-                                    tss_dist,
                                     df_metrics,
                                     exp,
                                     out_dir,
