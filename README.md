@@ -37,7 +37,7 @@ If the samples do not have inputs, you can leave the __input__ column header in 
 The [config file](https://github.com/idv20/epidraw/blob/main/config.yaml) specifies the parameters required for the EpiDRAW analysis.
 
 ### 3. Snakefile
-The Snakefile specifies the order in which the Python scripts should be run as part of the Snakemake EpiDRAW workflow.
+The [Snakefile](https://github.com/idv20/epidraw/blob/main/Snakefile) specifies the order in which the Python scripts should be run as part of the Snakemake EpiDRAW workflow.
 
 ## Running the EpiDRAW workflow.
 Provided that all 3 requirements mentioned above have been fulfilled, the EpiDRAW workflow can be run fully.
@@ -53,6 +53,22 @@ cd path/to/directory/containing/Snakefile
 Then run the workflow by specifying the number of cores you want to utilise
 ```
 snakemake --cores <number of cores>
+```
+
+## Testing part of the EpiDRAW workflow on a small synthetic dataset.
+The [test_dataset](https://github.com/idv20/epidraw/blob/main/test_dataset) folder contains mock data which can be run to give a sense of what the UMAP and clustering outputs would look like after an EpiDRAW analysis. The dataset was synthetically generated as a normalised matrix of counts. All other pre-requisite files have been purposely left empty as they are not needed for this test.
+
+To run this part of the EpiDRAW analysis you need to modify the [config file](https://github.com/idv20/epidraw/blob/main/config.yaml) accordingly and activate your environment (e.g. _epidraw_) using
+```
+conda activate epidraw
+```
+Then make sure you are in the same directory as your Snakemake file is
+```
+cd path/to/directory/containing/Snakefile
+```
+Then run the workflow by specifying the number of cores you want to utilise and passing arguments to signal that only the part of the workflow up to and including the clustering step should be run
+```
+snakemake --cores 1 --until cluster
 ```
 
 ## More information
